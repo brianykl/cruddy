@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Movies Management System</title>
+</head>
+<body>
+    <h1>Movie Management System</h1>
+    <form action="/create" method="post">
+        <input type="text" name="title" placeholder="Enter movie name" required>
+        <input type="submit" value="Create">
+    </form>
+    <h2>Movies:</h2>
+    <ul>
+        {% for movie in movies %}
+            <li>{{ movie.title }}</li>
+        {% endfor %}
+    </ul>
+    <hr>
+    <h2>Update Item:</h2>
+    <form action="/update" method="post">
+        <input type="text" name="old_title" placeholder="Old title" required>
+        <input type="text" name="new_title" placeholder="New title" required>
+        <input type="submit" value="Update">
+    </form>
+    <hr>
+    <h2>Delete Movie:</h2>
+    <form action="/delete" method="post">
+        <input type="text" name="title" placeholder="Movie title" required>
+        <input type="submit" value="Delete">
+    </form>
+</body>
+</html>
